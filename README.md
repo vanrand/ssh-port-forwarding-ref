@@ -29,3 +29,23 @@ ssh -L this-box:5000:far-host:80 user@remote-box -N
 ```bash
 ssh -R remote-box:4000:near-host:443 user@remote-box -N
 ```
+
+
+### Ports within the same host:
+
+##### Make service running at this-box:3000 available at this-box:3005
+
+```bash
+# All equivelent:
+ssh -L this-box:3005:this-box:3000 user@this-box -N
+ssh -L 1.2.3.4:3005:1.2.3.4:3000 user@localhost -N
+```
+
+##### Make service running at remote-box:5000 available at remote-box:5010
+
+```bash
+# All equivelent:
+ssh -R remote-box:5010:remote-box:5000 user@remote-box -N
+ssh -R 5.6.7.9:5010:5.6.7.9:5000 user@5.6.7.9 -N
+```
+
