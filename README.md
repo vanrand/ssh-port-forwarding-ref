@@ -49,3 +49,13 @@ ssh -R remote-box:5010:remote-box:5000 user@remote-box -N
 ssh -R 5.6.7.9:5010:5.6.7.9:5000 user@5.6.7.9 -N
 ```
 
+### Multiple ports and wildcard address
+
+##### Make both ports 443 & 902 on far-host available on all IPs on this-box:
+
+```bash
+ssh \
+ -L *:443:far-host:443 \
+ -L *:902:far-host:902 \
+user@remote-box -N
+```
