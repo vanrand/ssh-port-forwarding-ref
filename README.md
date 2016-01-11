@@ -59,3 +59,9 @@ ssh \
  -L *:902:far-host:902 \
 user@remote-box -N
 ```
+
+##### Make port 22 on this-box available at port 8022 on remote-box:
+
+```bash
+ssh -R *:8022:*:22 user@remote-box -N
+```
